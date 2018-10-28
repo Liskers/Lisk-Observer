@@ -4,6 +4,10 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/index.js"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@zeit/next-typescript": "1.1.1",
@@ -12,6 +16,8 @@
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "reakit": "^0.15.10",
+    "reakit-theme-default": "^0.1.11",
     "typescript": "latest",
     "typescript-babel-jest": "^1.0.5"
   },
