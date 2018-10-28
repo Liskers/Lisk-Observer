@@ -1,5 +1,6 @@
 import * as next from 'next'
 import * as express from 'express'
+import { routerAPI } from './api/'
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -11,7 +12,7 @@ const expressApp = express();
 
 app.prepare()
 .then(() => {
-  
+  expressApp.use(routerAPI);
   expressApp.get('*', (req, res) => {
     return handle(req, res);
   })
@@ -19,6 +20,4 @@ app.prepare()
   expressApp.listen(port, () => {
       console.log(`> Ready on http://localhost:${port}`)
   })
-
-
 })
